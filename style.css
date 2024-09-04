@@ -1,40 +1,66 @@
+@font-face {
+  font-family: 'Digital-7';
+  src:url('./digital-7-fonts/Digital-7.ttf.woff') format('woff'),
+      url('./digital-7-fonts/Digital-7.ttf.svg#Digital-7') format('svg'),
+      url('./digital-7-fonts/Digital-7.ttf.eot'),
+      url('./digital-7-fonts/Digital-7.ttf.eot?#iefix') format('embedded-opentype'); 
+  font-weight: normal;
+  font-style: normal;}
+
 *{
   margin: 0;
   padding: 0;
   line-height: 0;
-  border: 1px solid red;
-}
+  font-family: 'Digital-7';
+  box-sizing: border-box;}
   
   
 .calculatorBody{
   display: flex;
   margin: 100px auto;
   flex-direction: column;
-  width: 500px;
-  height: 500px;
-}
+  width: 400px;
+  border-radius: 10px;
+  border: 5px solid black;}
   
 .screen{
   display: flex;
   flex-direction: column;
-  width: 450px;
+  width: 350px;
 	margin: 20px auto;
-}
+	border: 1px solid red;
+  background-color: rgb(211, 211, 211);}
   
 .btmScreen,
 .topScreen{
+  font-size: 55px;
   display: flex;
   justify-content: end;
   align-items: center;
   padding-right: 10px;
-  height: 55px;
-}
+  height: 55px;}
 
-.topScreen{height: 25px;}
-  
-  
+.topScreen{
+  font-size: 25px;
+  height: 25px;}
+
+.btnContainer{
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  margin-bottom: 20px;
+  width: 350px;}
+
+.numpad{
+  display: flex;
+  flex-wrap: wrap;}
+
+/* .operand[value = '0']{
+  flex-grow: 1;
+} */
+
 button{
-  margin: 5px;
-  width: 70px;
-  height: 70px;
-}
+  margin: 2px;
+  width: 60px;
+  height: 60px;}
