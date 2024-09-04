@@ -9,6 +9,7 @@ const assignBtn = document.querySelector('.asign');
 const topScreen = document.querySelector('.topScreen');
 const comma = document.querySelector('.comma');
 const allClearBtn = document.querySelector('.clear');
+btmScreen.textContent = '0';
 
 function operate(number1, number2, operator){
     let a = parseFloat(number1);
@@ -52,6 +53,7 @@ operatorBtn.forEach(e => {
 		operator = e.value;  
     console.log(num1);
     }
+		btmScreen.textContent = '0';
 		topScreen.textContent = `${num1} ${operator}`;
   });
 });
@@ -70,14 +72,12 @@ assignBtn.addEventListener('click', ()=>{
 
 comma.addEventListener('click', ()=>{
 	console.log(comma.value)
-	if(num2.length > 0 && !(num2.includes('.'))){
-		if(num2.length == 0){
+	if(num2.length == 0 && !(num2.includes('.'))){
 		num2 += `0${comma.value}`;
 		btmScreen.textContent = `${num2}`
-		}else{
-			num2 += comma.value;
-			btmScreen.textContent = `${num2}`
-		}
+	}else if(num2.length > 0 && !(num2.includes('.'))){
+		num2 += comma.value;
+		btmScreen.textContent = `${num2}`
 	}
 });
 
@@ -90,5 +90,5 @@ function clearCalculator(){
 	num2 = '';
 	operator = '';
 	topScreen.textContent = '';
-	btmScreen.textContent = '';
+	btmScreen.textContent = '0';
 }
