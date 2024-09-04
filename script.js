@@ -55,7 +55,7 @@ operatorBtn.forEach(e => {
 });
 
 assignBtn.addEventListener('click', ()=>{
-	if(operator == '/' && num2 < '1'){
+	if(operator == '/' && num2 < '1' && num2 < '-1'){
 		btmScreen.textContent = 'LoL XD XD';
 		topScreen.textContent = '';
 		clearCalculator();
