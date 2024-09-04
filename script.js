@@ -7,6 +7,8 @@ const operandBtn = document.querySelectorAll('.operand');
 const operatorBtn = document.querySelectorAll('.operator');
 const assignBtn = document.querySelector('.asign');
 const topScreen = document.querySelector('.topScreen');
+const comma = document.querySelector('.comma');
+const allClearBtn = document.querySelector('.clear');
 
 function operate(number1, number2, operator){
     let a = parseFloat(number1);
@@ -38,7 +40,7 @@ operandBtn.forEach(button =>{
 operatorBtn.forEach(e => {
   e.addEventListener('click', () =>{
 		if(num1 == '' && num2 == ''){
-			btmScreen.textContent = '?????';
+			btmScreen.textContent = '????????';
 		}else if(num1 == ''){
       num1 = num2;
 			num2 = ''
@@ -46,7 +48,7 @@ operatorBtn.forEach(e => {
     }else if(num2 == ''){
       operator = e.value;
     }else{
-    num1 = String(operate(num1, num2, operator));  
+    num1 = `${operate(num1, num2, operator)}`;  
 		operator = e.value;  
     console.log(num1);
     }
@@ -61,16 +63,32 @@ assignBtn.addEventListener('click', ()=>{
 		clearCalculator();
 	}else if(num1.length > 0 && num2.length > 0){
 		let result = operate(num1, num2, operator);
-		btmScreen.textContent = `${result}`;
-		topScreen.textContent = '';
 		clearCalculator();
+		btmScreen.textContent = `${result}`;
 	}
 });
 
+comma.addEventListener('click', ()=>{
+	console.log(comma.value)
+	if(num2.length > 0 && !(num2.includes('.'))){
+		if(num2.length == 0){
+		num2 += `0${comma.value}`;
+		btmScreen.textContent = `${num2}`
+		}else{
+			num2 += comma.value;
+			btmScreen.textContent = `${num2}`
+		}
+	}
+});
+
+allClearBtn.addEventListener('click', ()=> {
+	clearCalculator();
+});
 
 function clearCalculator(){
 	num1 = '';
 	num2 = '';
 	operator = '';
-	input = [];
+	topScreen.textContent = '';
+	btmScreen.textContent = '';
 }
