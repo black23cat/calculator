@@ -71,14 +71,22 @@ body{
 .operatorContainer > button{background-color:rgb(255 165 0);}
 
 button{
-  color: rgb(255 255 255);
+  color: rgb(255, 255, 255);
   background-color:rgb(55 55 55);
   font-size: 28px;
   margin: 2px;
   width: 85px;
   height: 85px;
   border-radius: 45px;
-  border: none;}
+  cursor: pointer;
+  border: 1px solid rgb(112, 112, 112);
+  padding: 0.25em 0.5em;
+  box-shadow: 4px 4px 1px 0px rgba(0,0,0,1);
+  position: relative;
+}
+
+
+
 
 .operand[value = '0']{width: 175px;}
 
@@ -89,4 +97,8 @@ button:hover{
   opacity: 0.8;
   border: 1px solid rgb(109 109 109);}
 
-button:active{opacity: 0.4;}
+button:active{
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
