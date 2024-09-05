@@ -36,7 +36,7 @@ function operate(number1, number2, operator){
 operandBtn.forEach(button =>{
   button.addEventListener('click', ()=>{
 		if(num2.length <= 10){
-      if(button.value == '0' && num2.length == 0){
+      if(button.value == '0' && num1.length == 0){
         defaultScreen()
       }else{
         num2 += button.value;
