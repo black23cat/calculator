@@ -10,29 +10,29 @@ const topScreen = document.querySelector('.topScreen');
 const comma = document.querySelector('.comma');
 const allClearBtn = document.querySelector('.clear');
 const backspace = document.querySelector('.backspace');
+const minusBtn = document.querySelector('.minus');
 updateScreen();
 
 function operate(number1, number2, operator){
-    let result;
-    switch(operator){
-      case '+':
-        result = parseFloat(number1) + parseFloat(number2);
-        break;
-      case '-':
-        result = number1 - number2;
-        break;
-      case '*':
-        result = number1 * number2;
-        break;
-      case '/':
-        result = number1 / number2;
-        break;
+  let result;
+  switch(operator){
+    case '+':
+      result = parseFloat(number1) + parseFloat(number2);
+      break;
+    case '-':
+      result = number1 - number2;
+      break;
+    case '*':
+      result = number1 * number2;
+      break;
+    case '/':
+      result = number1 / number2;
+      break;
     }
-    return (result %1 !== 0)? `${result.toFixed(1)}`
-          :(String(result).length > 11)? `${result.toExponential(6)}`
-          :`${result}`;
-
-  }
+  return (result %1 !== 0)? `${result.toFixed(1)}`
+        :(String(result).length > 11)? `${result.toExponential(6)}`
+        :`${result}`;
+}
 
 operandBtn.forEach(button =>{
   button.addEventListener('click', ()=>{
@@ -106,6 +106,16 @@ backspace.addEventListener('click', ()=>{
   }
 });
 
+minusBtn.addEventListener('click', ()=>{
+  if(num2.includes('-')){
+    num2 = num2.slice(1);
+    updateScreen(num2);
+  }else{
+    num2 = `-${num2}`;
+    updateScreen(num2);
+  }
+});
+
 function clearCalculator(){
 	num1 = '';
 	num2 = '';
@@ -115,5 +125,5 @@ function clearCalculator(){
 }
  
 function updateScreen(variable = 0){
-  btmScreen.textContent = `${variable}`
+  btmScreen.textContent = `${variable}`;
 }
