@@ -8,6 +8,7 @@ Calculator should have basic math operator.
 - Multiplication(*)
 - Division(/)
 - Assign(=)
+
 Clear button to wipe all existing data.
 screen to display the input data.
 
