@@ -33,7 +33,7 @@ body{
 .btmScreen,
 .topScreen{
   font-size: 55px;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   display: flex;
   justify-content: end;
   align-items: center;
@@ -42,7 +42,7 @@ body{
   height: 58px;}
 
 .topScreen{
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   padding-bottom: 0px;
   padding-top: 5px;
   font-size: 23px;
